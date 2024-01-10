@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>教育部智能巡课管理平台</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/map.css">
+</head>
+<body>
+<div class="data">
+	<!--** 导航栏代码  **-->
+	<div class="data_button_nav">
+		<div class="main_title_nav"><img src="./img/sideswitch.png"/></div>   
+	</div>
+	<!-- <div class="data_button_return"> 
+		<div class="main_title_return"><a href="#" style=" color:#fff">返回</a></div>    
+	</div> -->
+	<div class="sidebar" id="sidebar" style="transform: translateX(-200px)">
+		<div style="text-align: center; margin-top: 40px;"><img src="./img/数据看板.png"/></div>
+		<div class="siderbar_title">高等教育核心数据看板</div>
+		<ul>
+			<li><a href="../qgkb/index.html">核心数据</a></li>
+			<li><a href="../jckb_qg/index.html">基础数据</a></li>
+			<li><a href="../rcpy1/index.html">人才培养</a></li>
+			<li><a href="#">改革数据</a></li>
+			<li><a href="#" style="background: #2C58A6;">智能巡课</a></li>
+		</ul>
+	</div>
+	<!--** 导航栏代码  **-->
+		<div class="select-group">
+		  <div class="select-item">
+		    <!-- <label for="">地区</label> -->
+		    <div class="select-inline">
+		      <select id="select-page" class="select fl" name="state" data-value="0">
+		        <option value="0">全国</option>
+						<option value="1">陕西省</option>
+						<option value="2">湖北省</option>
+						<option value="3">江苏省</option>
+						<option value="4">上海市</option>
+						<option value="5">北京市</option>
+		      </select>
+		    </div>
+		  </div>
+		</div>
+    <div class="data-title">
+        <div class="title-left fl"></div>
+        <div class="title-center fl">
+					教育部智能巡课管理平台
+				</div>
+        <div class="title-right fr"></div>
+    </div>
+		<div class="data-info">
+			<div class="data-info-item">
+				<div class="data-info-item-main">
+					<p class="name">接入省份</p>
+					<p class="num" id="num1">0</p>
+				</div>
+				<div class="fltdecarround fltdecarroundleft fltdecarroundtop"></div>
+				<div class="fltdecarround fltdecarroundleft fltdecarroundbottom"></div>
+				<div class="fltdecarround fltdecarroundright fltdecarroundtop"></div>
+				<div class="fltdecarround fltdecarroundright fltdecarroundbottom"></div>
+			</div>
+			<div class="data-info-item">
+				<div class="data-info-item-main">
+					<p class="name">接入高校</p>
+					<p class="num" id="num2">0</p>
+				</div>
+				<div class="fltdecarround fltdecarroundleft fltdecarroundtop"></div>
+				<div class="fltdecarround fltdecarroundleft fltdecarroundbottom"></div>
+				<div class="fltdecarround fltdecarroundright fltdecarroundtop"></div>
+				<div class="fltdecarround fltdecarroundright fltdecarroundbottom"></div>
+			</div>
+			<div class="data-info-item">
+				<div class="data-info-item-main">
+					<p class="name">课程数</p>
+					<p class="num" id="num3">0</p>
+				</div>
+				<div class="fltdecarround fltdecarroundleft fltdecarroundtop"></div>
+				<div class="fltdecarround fltdecarroundleft fltdecarroundbottom"></div>
+				<div class="fltdecarround fltdecarroundright fltdecarroundtop"></div>
+				<div class="fltdecarround fltdecarroundright fltdecarroundbottom"></div>
+			</div>
+			<div class="data-info-item">
+				<div class="data-info-item-main">
+					<p class="name">已评课数</p>
+					<p class="num" id="num4">0</p>
+				</div>
+				<div class="fltdecarround fltdecarroundleft fltdecarroundtop"></div>
+				<div class="fltdecarround fltdecarroundleft fltdecarroundbottom"></div>
+				<div class="fltdecarround fltdecarroundright fltdecarroundtop"></div>
+				<div class="fltdecarround fltdecarroundright fltdecarroundbottom"></div>
+			</div>
+			<div class="data-info-item">
+				<div class="data-info-item-main">
+					<p class="name">平均分数</p>
+					<p class="num" id="num5">0</p>
+				</div>
+				<div class="fltdecarround fltdecarroundleft fltdecarroundtop"></div>
+				<div class="fltdecarround fltdecarroundleft fltdecarroundbottom"></div>
+				<div class="fltdecarround fltdecarroundright fltdecarroundtop"></div>
+				<div class="fltdecarround fltdecarroundright fltdecarroundbottom"></div>
+			</div>
+			<div class="data-info-item">
+				<div class="data-info-item-main">
+					<p class="name">接入教室路数</p>
+					<p class="num" id="num6">0</p>
+				</div>
+				<div class="fltdecarround fltdecarroundleft fltdecarroundtop"></div>
+				<div class="fltdecarround fltdecarroundleft fltdecarroundbottom"></div>
+				<div class="fltdecarround fltdecarroundright fltdecarroundtop"></div>
+				<div class="fltdecarround fltdecarroundright fltdecarroundbottom"></div>
+			</div>
+		</div>
+    <div class="data-content">
+        <div class="con-left fl">
+            <div class="left-top">
+							<div class="title">接入课程总数</div>
+							<div class="fltdecarround fltdecarroundleft fltdecarroundtop"></div>
+							<div class="fltdecarround fltdecarroundleft fltdecarroundbottom"></div>
+							<div class="fltdecarround fltdecarroundright fltdecarroundtop"></div>
+							<div class="fltdecarround fltdecarroundright fltdecarroundbottom"></div>
+							<div id="echarts_1" class="charts"></div>
+            </div>
+						<div class="left-center">
+							<div class="title"><span id="data2Name">各省份接入课程数</span></div>
+							<div class="fltdecarround fltdecarroundleft fltdecarroundtop"></div>
+							<div class="fltdecarround fltdecarroundleft fltdecarroundbottom"></div>
+							<div class="fltdecarround fltdecarroundright fltdecarroundtop"></div>
+							<div class="fltdecarround fltdecarroundright fltdecarroundbottom"></div>
+							<div id="echarts_2" class="charts"></div>
+						</div>
+            <div class="left-bottom">
+							<div class="select-group" style="top:20px;right:5px">
+							  <div class="select-item">
+							    <!-- <label for="">地区</label> -->
+							    <div class="select-inline">
+							      <select id="select-page3" class="select small-select fl" name="state" data-value="1">
+							        <option value="1">陕西省</option>
+											<option value="2">湖北省</option>
+											<option value="3">江苏省</option>
+											<option value="4">上海市</option>
+											<option value="5">北京市</option>
+							      </select>
+							    </div>
+							  </div>
+							</div>
+                <div class="title">接入本研课程占比</div>
+                <div class="fltdecarround fltdecarroundleft fltdecarroundtop"></div>
+                <div class="fltdecarround fltdecarroundleft fltdecarroundbottom"></div>
+                <div class="fltdecarround fltdecarroundright fltdecarroundtop"></div>
+                <div class="fltdecarround fltdecarroundright fltdecarroundbottom"></div>
+                <div id="echarts_3" class="charts"></div>
+            </div>
+        </div>
+        <div class="con-center fl">
+					<div class="title"><span id="center-title"></span></div>
+						<div class="select-group" style="top:10px;">
+						  <div class="select-item">
+						    <!-- <label for="">地区</label> -->
+						    <div class="select-inline">
+						      <select id="select-page2" class="select small-select fl" name="state" data-value="0">
+								<option value="0">日</option>
+								<option value="1">月</option>
+								<option value="2">季度</option>
+								<option value="3">年</option>
+						      </select>
+						    </div>
+						  </div>
+						</div>
+            <div class="cen-top" id="map"></div>
+            <div class="cen-bottom" style="display: flex;flex-wrap: nowrap;">
+              <div id="echarts_7" class="charts-liq"></div>
+							<div id="echarts_8" class="charts-liq"></div>
+							<div id="echarts_9" class="charts-liq"></div>
+							<div id="echarts_10" class="charts-liq"></div>
+            </div>
+						<div class="fltdecarround fltdecarroundleft fltdecarroundtop"></div>
+						<div class="fltdecarround fltdecarroundleft fltdecarroundbottom"></div>
+						<div class="fltdecarround fltdecarroundright fltdecarroundtop"></div>
+						<div class="fltdecarround fltdecarroundright fltdecarroundbottom"></div>
+        </div>
+        <div class="con-right fr">
+            <div class="right-top">
+                <div class="title">评课率</div>
+                <div class="fltdecarround fltdecarroundleft fltdecarroundtop"></div>
+                <div class="fltdecarround fltdecarroundleft fltdecarroundbottom"></div>
+                <div class="fltdecarround fltdecarroundright fltdecarroundtop"></div>
+                <div class="fltdecarround fltdecarroundright fltdecarroundbottom"></div>
+								<div style="width:100%;height:100%">
+									<div id="echarts_4" class="charts" style="width:50%"></div>
+									<div style="width:50%;height:100%" class="right-top-text">
+										<p>本月评课次数<span id="data4Item2">0</span></p>
+										<p>
+											同比增长<p id="data4Item3">+0%</p>
+										</p>
+									</div>
+								</div>
+            </div>
+            <div class="right-center">
+                <div class="title">课程质量分布</div>
+                <div class="fltdecarround fltdecarroundleft fltdecarroundtop"></div>
+                <div class="fltdecarround fltdecarroundleft fltdecarroundbottom"></div>
+                <div class="fltdecarround fltdecarroundright fltdecarroundtop"></div>
+                <div class="fltdecarround fltdecarroundright fltdecarroundbottom"></div>
+                <div id="echarts_5" class="charts"></div>
+            </div>
+            <div class="right-bottom">
+                <div class="title">课程得分排行</div>
+                <div class="fltdecarround fltdecarroundleft fltdecarroundtop"></div>
+                <div class="fltdecarround fltdecarroundleft fltdecarroundbottom"></div>
+                <div class="fltdecarround fltdecarroundright fltdecarroundtop"></div>
+                <div class="fltdecarround fltdecarroundright fltdecarroundbottom"></div>
+                <div id="echarts_6" class="charts" style="padding:20px 0 5px;">
+									<ul id="paiming" class="pm-list">
+										
+									</ul>
+								</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+    /**  导航栏的展示与隐藏配置  **/
+    // 导航栏图标
+    var navicon = document.querySelector("body > div.data > div.data_button_nav")
+    // 导航栏列表
+    var navlist = document.querySelector("#sidebar")
+    var sidebar = document.getElementById("sidebar")
+    // 1.1鼠标悬停在导航图标上，就展示导航
+    navicon.addEventListener("mouseover", function(){ 
+        sidebar.style.setProperty('transform','translateX(-0px)')
+    });
+    // 1.2鼠标离开导航图标，2s后隐藏导航
+    navicon.addEventListener("mouseout", function(){
+        // setTimeout(() => {
+            sidebar.style.setProperty('transform','translateX(-199px)')
+        // }, 1000);
+    })
+    // 2.1鼠标悬停在导航栏上，就展示导航
+    navlist.addEventListener("mouseover", function(){ 
+        sidebar.style.setProperty('transform','translateX(-0px)')
+    })
+    // 2.2鼠标离开导航栏，2s后隐藏导航
+    navlist.addEventListener("mouseout", function(){
+        sidebar.style.setProperty('transform','translateX(-199px)')
+    })
+    navlist.addEventListener("click", function(param){ 
+        console.log(param)
+    })
+</script>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/echarts.min.js"></script>
+<script src="js/echarts-liquidfill-2.0.6/dist/echarts-liquidfill.min.js"></script>
+<!-- <script src="http://echarts.baidu.com/resource/echarts-liquidfill-latest/dist/echarts-liquidfill.min.js"></script> -->
+<script src="js/china.js"></script>
+<script src="js/shanxi.js"></script>
+<script src="js/echarts.js"></script>
+<script src="js/jquery.select.js"></script>
+<script type="text/javascript">
+	$('#select-page').select();
+	$('#select-page2').select();
+	$('#select-page3').select();
+	
+	initData('0')
+	
+	$("#select-page").next().find('li').off().on("click", function() {
+		var type = $(this).attr('data-value')
+		if(type == '1') {
+			// window.open('shanxi.html')
+			window.location.href = 'shanxi.html'
+		}
+	})
+	
+	
+	
+</script>
+</html>
